@@ -14,8 +14,11 @@ This plugin send news in json format with restful api
 
 ## == Installation ==
 
-1. Upload the plugin folder to your /wp-content/plugins/ folder.
-2. Go to the **Plugins** page and activate the plugin.
+1. Download latest release from [HERE](https://github.com/akbarijedi/wp_restAPI_news_feed/releases/)
+2. Go to your website admin page
+3. Go to ADD NEW PLUGIN and upload zip file
+4. (or) Upload the plugin folder to your /wp-content/plugins/ folder.
+5. Go to the **Plugins** page and activate the plugin.
 
 ## == Frequently Asked Questions ==
 
