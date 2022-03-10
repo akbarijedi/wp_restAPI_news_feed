@@ -1,27 +1,49 @@
 <?php
+// Latest Posts with Restful API = LPRA
+/*
+ * this file define ajax request.
+ * first get the user request and after that check the rewrite route link.
+ * finally based on user request, calculate and send appropriate response to the user.
+ * */
 
-function add_api_news_endpoint()
+/*
+ * add some route
+ * */
+function lpra_add_api_posts_endpoint()
 {
-    add_rewrite_tag('%latestnews%', '([0-9]+)');
-    add_rewrite_rule('api/latestnews/([0-9]+)/?', 'index.php?latestnews=$matches[1]', 'top');
+    /*
+     * if user want to get the latest N posts
+     * */
+    add_rewrite_tag('%latestposts%', '([0-9]+)');
+    add_rewrite_rule('api/latestposts/([0-9]+)/?', 'index.php?latestposts=$matches[1]', 'top');
 
+    /*
+     * if the user wants to get specific post content with POST_ID
+     * */
     add_rewrite_tag('%post_id%', '([0-9]+)');
     add_rewrite_rule('api/getpost/([0-9]+)/?', 'index.php?post_id=$matches[1]', 'top');
 
+    /*
+     * if the user want to get custom category called "mobile_app_more"
+     * */
     add_rewrite_tag('%moretab%', '([0-9]+)');
     add_rewrite_rule('api/moretab/([0-9]+)/?', 'index.php?moretab=$matches[1]', 'top');
 
 }
-add_action('init', 'add_api_news_endpoint');
+add_action('init', 'lpra_add_api_posts_endpoint');
 
-function get_news_feed_restapi()
+/*
+ * Get Posts and send it to the user
+ * */
+function lpra_get_posts_feed_restapi()
 {
     global $wp_query;
 
-    $allcontent = $wp_query->get('latestnews');
+    $allcontent = $wp_query->get('latestposts');
     $post_content = $wp_query->get('post_id');
     $metatab = $wp_query->get('moretab');
 
+    /* If user want to get the N latest posts */
     if (!empty($allcontent))
     {
         $args = array(
@@ -78,6 +100,7 @@ function get_news_feed_restapi()
         }
         wp_send_json_success([$response1]);
     }
+    /* If the user wants to get one post with ID */
     elseif(!empty($post_content))
     {
         $news_pic = wp_get_attachment_url( get_post_thumbnail_id($post_content));
@@ -92,6 +115,7 @@ function get_news_feed_restapi()
         $post_content['category_name'] = $cat_names;
         wp_send_json_success ([$post_content]);
     }
+    /* If the user wants to get custom category called "mobile_app_more" */
     elseif(!empty($metatab))
     {
         $args = array(
@@ -124,6 +148,6 @@ function get_news_feed_restapi()
     }
 }
 
-add_action('template_redirect', 'get_news_feed_restapi');
+add_action('template_redirect', 'lpra_get_posts_feed_restapi');
 
 

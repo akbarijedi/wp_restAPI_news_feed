@@ -1,9 +1,9 @@
 <?php
 
 /**
- * Plugin Name: News JSON Restful API
+ * Plugin Name: Latest Posts with Restful API
  * Plugin URI: 
- * Description: Generate N latest News in RestFul API, in JSON format with news image URL | url to get latest news = (siteURL)/api/latestnews/(News Number)/ | to get 1 post = (siteURL)/api/getpost/(PostID)/ | to show 'mobile_app_more' category use (siteURL)/api/moretab/1/
+ * Description: Generate N latest posts in RestFul API, JSON format with news image URL | url to get latest posts = (siteURL)/api/latestnews/(POST Number to show)/ | to get 1 post = (siteURL)/api/getpost/(PostID)/ | to show 'mobile_app_more' category use (siteURL)/api/moretab/1/
  * Version: 1.0.5
  * Requires at least: 5.2
  * Requires PHP: 7.2
@@ -16,8 +16,10 @@
  *
  */
 
-
-function add_custom_headers() {
+/*
+ * define these headers to accept CROS origin in browsers ;)
+ * */
+function lpra_add_custom_headers() {
     add_filter( 'rest_pre_serve_request', function( $value ) {
         header( 'Access-Control-Allow-Headers: Authorization, X-WP-Nonce,Content-Type, X-Requested-With');
         header( 'Access-Control-Allow-Origin: *' );
@@ -26,7 +28,9 @@ function add_custom_headers() {
         return $value;
     } );
 }
-add_action( 'rest_api_init', 'add_custom_headers', 15 );
+add_action( 'rest_api_init', 'lpra_add_custom_headers', 15 );
 
+/*
+ * include functionality :)
+ * */
 require 'inc/rewrite-api.php';
-//require 'inc/rest-api.php';

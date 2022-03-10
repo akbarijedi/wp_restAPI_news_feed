@@ -1,58 +1,69 @@
-=== Your Plugin Name ===
+# === wp_restAPI_news_feed ===
 Contributors: Hadi Akbarijedi
 Tags: news feed, rest
 Requires at least: 5.5
 Tested up to: 5.8
-Stable tag: 1.0
+Stable tag: 1.0.5
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
- 
-A WordPress plugin to get news feed in JSON
- 
-== Description ==
- 
-This plugin send news in json format with restful api
 
-1- to get latest N content visit: (site_URL)/api/latestnews/(Number of contents like 30)
-2- to get one post content visit: (site_URL)/api/getpost/(post ID)
-3- to get 'mobile_app_more' visit: (site_URL)/api/moretab/1
+A WordPress plugin to get news feed in JSON format
 
-== Installation ==
- 
-1. Upload the plugin folder to your /wp-content/plugins/ folder.
-2. Go to the **Plugins** page and activate the plugin.
- 
-== Frequently Asked Questions ==
- 
-= How do I use this plugin? =
- 
+### WordPress plugin to show:
+
+- latest news in JSON form
+- One post show
+- export one category in JSON format
+
+This plugin send news in json format with restful api with rewrite API with catch abillity
+
+1. to get latest N content visit: (site_URL)/api/latestnews/(Number of POSTs - like 30)
+2. to get one post content visit: (site_URL)/api/getpost/(post ID)
+3. to get 'mobile_app_more' category posts just visit: (site_URL)/api/moretab/1
+
+## Installation
+
+1. Download latest release from [HERE](https://github.com/akbarijedi/wp_restAPI_news_feed/releases/)
+2. Go to your website admin page
+3. Go to ADD NEW PLUGIN and upload zip file
+4. (or) Upload the plugin folder to your /wp-content/plugins/ folder.
+5. Go to the **Plugins** page and activate the plugin.
+6. got to setting -> permalink and just hit save button to update routes!
+
+## Frequently Asked Questions
+
+### How do I use this plugin?
+
 to get latest news in json format with restful api
- 
-= How to uninstall the plugin? =
- 
-Simply deactivate and delete the plugin. 
- 
-== Screenshots ==
-1. Description of the first screenshot. 
-2. Description of the second screenshot.
- 
-== Changelog ==
-= 1.0.0 =
-* Plugin released.
 
-= 1.0.1 =
-* Fix some bug
-* Add latest post list and post picture image
-* Add one post display
+### How to uninstall the plugin?
 
-= 1.0.2 =
-* add CROS ability
+Simply deactivate and delete the plugin.
 
-= 1.0.3 =
-* add rewrite url output data in one json array
+## Changelog
 
-= 1.0.4 =
-* add Category name to output
+### 1.0.0
 
-= 1.0.5
-* add read from category name = 'mobile_app_more'
+- Plugin first released.
+
+### 1.0.1
+
+- Fix some bugs!
+- Add latest post list and post picture image
+- Add one post display
+
+### 1.0.2
+
+- add CROS ability
+
+### 1.0.3
+
+- add rewrite url output data in one json array
+
+### 1.0.4
+
+- add Category name to output
+
+### 1.0.5
+
+- add read from category name = 'mobile_app_more'
