@@ -11,19 +11,19 @@ A WordPress plugin to get news feed in JSON format
 
 ### WordPress plugin to show:
 
-- latest news in JSON form
+- the latest news in JSON form
 - One post show
 - export one category in JSON format
 
-This plugin send news in json format with restful api with rewrite API with catch abillity
+This plugin sends posts in json format with restful api with rewrite ajax with catch ability
 
-1. to get latest N content visit: (site_URL)/api/latestnews/(Number of POSTs - like 30)
-2. to get one post content visit: (site_URL)/api/getpost/(post ID)
+1. to get latest N content visit: (site_URL)/api/latestposts/(Number of POSTs - like 30)
+2. to get one "POST ID" content visit: (site_URL)/api/getpost/(post ID)
 3. to get 'mobile_app_more' category posts just visit: (site_URL)/api/moretab/1
 
 ## Installation
 
-1. Download latest release from [HERE](https://github.com/akbarijedi/wp_restAPI_news_feed/releases/)
+1. Download the latest release from [HERE](https://github.com/akbarijedi/wp_restAPI_news_feed/releases/)
 2. Go to your website admin page
 3. Go to ADD NEW PLUGIN and upload zip file
 4. (or) Upload the plugin folder to your /wp-content/plugins/ folder.
