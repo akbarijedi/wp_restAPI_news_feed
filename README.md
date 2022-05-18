@@ -1,19 +1,19 @@
 # === Latest Posts with Restful API ===
 Contributors: [Hadi Akbarijedi](https://webstart.ir/)
 Tags: news feed, rest
-Requires at least: 5.5
-Tested up to: 5.9
-Stable tag: 1.0.5
+Requires at least: 5.0
+Tested up to: 6.0-RC3-53407
+Stable tag: 1.0.6
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
-A WordPress plugin to get news feed in JSON format
+A WordPress plugin to get the latest posts in JSON format
 
 ### WordPress plugin to show:
 
-- the latest news in JSON form
-- One post show
-- export one category in JSON format
+- the latest posts in JSON format
+- One post showing
+- export one VIP category in JSON format 
 
 This plugin sends posts in json format with restful api with rewrite ajax with catch ability
 
@@ -67,3 +67,9 @@ Simply deactivate and delete the plugin.
 ### 1.0.5
 
 - add read from category name = 'mobile_app_more'
+
+### 1.0.6
+
+- Upgrade to compatibility with WordPress 6
+- Fix some dictation in readme file!
+- Improve application stability
